@@ -1,0 +1,23 @@
+{
+  "name": "vf-outboundmessage-listener",
+  "version": "1.0.0",
+  "description": "public listener to try out Salesforce outbound message format",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mudi77/vf-outboundmessage-listener.git"
+  },
+  "author": "I.C. Cassacloud (Ness)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mudi77/vf-outboundmessage-listener/issues"
+  },
+  "homepage": "https://github.com/mudi77/vf-outboundmessage-listener#readme",
+  "dependencies": {
+    "ejs": "^3.0.1",
+    "express": "^4.17.1"
+  }
+}
