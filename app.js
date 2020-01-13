@@ -8,11 +8,12 @@ app.set('view engine', 'ejs');
 app.use(express.static(__dirname + '/public'));
 
 app.get('/', function(req, res) {    
+    console.log("GET request reseived !!!", req.body);
     res.render('index');
 });
 
 app.post("/", function (req, res) {
-    console.log(req.body);
+    console.log("POST request reseived !!!", req.body);
     res.send("POST request reseived !!!");
 });
 
