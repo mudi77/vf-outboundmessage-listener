@@ -27,7 +27,7 @@ app.post('/', xmlparser(), (req, res, next) => {
 
     //res.set("Content-Type", "text/xml");
     res.set('Content-Type', 'text/html');
-    res.render('index', { data: JSON.stringify( processMsg ) });
+    res.render('index', { data: JSON.stringify( {"key":"test1", "key2": "test2"} ) });
 
     // parseXml.utils.load((loadData) => {
     //     console.log("file load: ", loadData);
