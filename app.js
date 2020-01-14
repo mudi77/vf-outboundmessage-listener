@@ -52,7 +52,8 @@ app.post('/', xmlparser(), (req, res) => {
     console.log("processMsg: ", processMsg);
     //console.log("xml: ", xml);
 
-    res.set("Content-Type", "text/xml").render('index', {data: processMsg});
+    res.set("Content-Type", "text/xml");
+    res.render('index', {data: processMsg});
   });
 
 
