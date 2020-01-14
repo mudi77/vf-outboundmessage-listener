@@ -45,10 +45,14 @@ app.post('/', xmlparser(), (req, res) => {
     </soapenv:Body>
   </soapenv:Envelope>`;
 
-    console.log("req.body: ", req.body);
-    console.log("xml: ", xml);
 
-    res.set("Content-Type", "text/xml").render('index', {data: xml});
+    let processMsg = parseXml.unwrapMessage(req.body);
+
+    console.log("req.body: ", req.body);
+    console.log("processMsg: ", processMsg);
+    //console.log("xml: ", xml);
+
+    res.set("Content-Type", "text/xml").render('index', {data: processMsg});
   });
 
 //app.post("/", function (req, res) {

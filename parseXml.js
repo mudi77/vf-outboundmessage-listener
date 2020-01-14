@@ -32,6 +32,27 @@ let parse = (data, fn) => {
 
     });
 
-}
+};
 
-module.exports.parse = parse;
+
+unwrapMessage = function(obj) {
+    try {
+  
+      var orgId = obj['soapenv:envelope']['soapenv:body'][0].notifications[0].organizationid[0];
+      var contactId = obj['soapenv:envelope']['soapenv:body'][0].notifications[0].notification[0].sobject[0]['sf:id'][0];
+      var mobilePhone = obj['soapenv:envelope']['soapenv:body'][0].notifications[0].notification[0].sobject[0]['sf:mobilephone'][0];
+  
+      return {
+        orgId: orgId,
+        contactId: contactId,
+        mobilePhone: mobilePhone
+      };
+  
+    } catch (e) {
+      console.log('Could not parse OBM XML', e);
+      return {};
+    }
+  };
+  
+
+module.exports.parse = unwrapMessage;
