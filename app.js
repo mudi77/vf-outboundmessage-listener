@@ -22,7 +22,7 @@ app.get('/', function(req, res) {
 
 app.post("/", function (req, res) {
     console.log("POST request received !!!", req.body);
-    parser(req.body);
+    bodyParser(req.body);
 
     // parseXml.parse(req.body, (data) => {
 
