@@ -48,7 +48,7 @@ app.post('/', xmlparser(), (req, res) => {
     console.log("req.body: ", req.body);
     console.log("xml: ", xml);
 
-    res.set("Content-Type", "text/xml").send(xml);
+    res.set("Content-Type", "text/xml").render('index', {data: xml});
   });
 
 //app.post("/", function (req, res) {
