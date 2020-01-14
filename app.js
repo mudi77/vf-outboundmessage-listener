@@ -14,7 +14,7 @@ app.use(bodyParser.json());
 
 app.get('/', function(req, res) {    
     console.log("GET request !", req.body);
-    res.render('index', { data: JSON.stringify( req.body ) });
+    res.render('index', { data: JSON.stringify( {"key":"test1", "key2": "test2"} ) });
 });
 
 app.post('/', xmlparser(), (req, res) => {
@@ -25,7 +25,7 @@ app.post('/', xmlparser(), (req, res) => {
     console.log("req.body: ", req.body);
     console.log("processMsg: ", processMsg);
 
-    res.set("Content-Type", "text/xml");
+    //res.set("Content-Type", "text/xml");
     res.render('index', { data: JSON.stringify( processMsg ) });
   });
 
