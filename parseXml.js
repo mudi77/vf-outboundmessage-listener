@@ -35,7 +35,7 @@ let parse = (data, fn) => {
 };
 
 
-unwrapMessage = function(obj) {
+parse = function(obj) {
     try {
   
       var orgId = obj['soapenv:envelope']['soapenv:body'][0].notifications[0].organizationid[0];
@@ -49,10 +49,10 @@ unwrapMessage = function(obj) {
       };
   
     } catch (e) {
-      console.log('Could not parse OBM XML', e);
+      console.log('error processing', e);
       return {};
     }
   };
   
 
-module.exports.unwrapMessage = unwrapMessage;
+module.exports.parse = parse;
