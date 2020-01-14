@@ -9,7 +9,10 @@ let port = process.env.PORT || 8080;
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname + '/public'));
 
-app.use( bodyParser() );
+// app.use( bodyParser() );
+
+app.use(bodyParser.urlencoded());
+app.use(bodyParser.json());
 
 app.get('/', function(req, res) {    
     console.log("GET request received !!!", req.body);
