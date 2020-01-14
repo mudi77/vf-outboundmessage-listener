@@ -55,18 +55,6 @@ app.post('/', xmlparser(), (req, res) => {
     res.set("Content-Type", "text/xml").render('index', {data: processMsg});
   });
 
-//app.post("/", function (req, res) {
-//    res.type('application/xml');
-
-//    console.log("POST request received !!!", req.body);
-    //bodyParser(req.body);
-
-//    res.render('index', { data: JSON.stringify( req.body ) });
-
-    // parseXml.parse(req.body, (data) => {
-    //     console.log("data: ", data);
-    // });
-//});
 
 app.listen(port, function() {
     console.log('app is running on http://localhost:' + port);
