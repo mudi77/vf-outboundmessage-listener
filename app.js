@@ -28,8 +28,7 @@ app.post('/', xmlparser(), (req, res, next) => {
     console.log("req.body: ", req.body);
     console.log("processMsg: ", processMsg);
 
-    //res.set('Content-Type', 'text/html');
-
+    res.set('Content-Type', 'text/html');
     res.render('index', { data: JSON.stringify( resultData, undefined, 4 )  });    
 
     // app.get('/', function(req, res) {    
@@ -37,7 +36,7 @@ app.post('/', xmlparser(), (req, res, next) => {
     //     res.render('index', { data: JSON.stringify( resultData, undefined, 4 )  });    
     // });
     
-  });
+  }).render('index', { data: JSON.stringify( resultData, undefined, 4 )  });
 
 app.listen(port, function() {
     console.log('app is running on http://localhost:' + port);
