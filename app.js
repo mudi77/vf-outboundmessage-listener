@@ -20,13 +20,20 @@ app.get('/', function(req, res) {
 app.post('/', xmlparser(), (req, res, next) => {
     console.log('SF outbound msg received! \n');
 
-    let processMsg = parseXml.parse(req.body);
+    let processMsg = parseXml.utils.parse(req.body);
 
     console.log("req.body: ", req.body);
     console.log("processMsg: ", processMsg);
 
     //res.set("Content-Type", "text/xml");
     res.render('index', { data: JSON.stringify( processMsg ) });
+
+    parseXml.utils.load((loadData) => {
+
+        console.log("file load: ", loadData);
+
+    });
+
   });
 
 
