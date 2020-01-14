@@ -1,0 +1,15 @@
+<div class="sideSection">
+    <label>POST ENDPOINT DEFINITION:</label>
+
+    <pre >     
+    app.post('/', xmlparser(), (req, res, next) => {
+        let processMsg = parseXml.utils.parse(req.body);
+        res.set('Content-Type', 'text/html');
+        res.render('index', { data: JSON.stringify( processMsg ) });
+    });
+    </pre>    
+</div>
+
+
+
+

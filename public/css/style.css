@@ -1,0 +1,23 @@
+.sideSection{
+    position: absolute;
+    overflow: hidden;
+    left: 2%;
+    top: 30%;
+    width: 35%;
+    height: 30%;
+    padding: 0;
+    margin: 0;
+    background-color: grey;
+}
+
+.resultSection{
+    position: absolute;
+    overflow: hidden;
+    left: 40%;
+    top: 30%;
+    width: 35%;
+    height: 60%;
+    padding: 0;
+    margin: 0;
+    background-color: #4e5d6c;
+}

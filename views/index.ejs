@@ -6,19 +6,21 @@
 
     <!-- CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootswatch/3.2.0/superhero/bootstrap.min.css" rel="stylesheet">
-    <!-- <link rel="stylesheet" href="css/style.css"> -->
+    <link rel="stylesheet"  type="text/css" href="/public/css/style.css">
 
 </head>
 <body>
 
 <div class="container">
     <div class="jumbotron">
-        <h2>Test: SF outbound message format</h2>        
+        <!-- <h2>Test: SF outbound message format</h2>         -->
     </div>
 
+    
+    <%- include ('./partial/sideSection') -%>
+    
     <%- include ('./partial/resultSection', {data: data}) -%>
   
-    <!-- <span class="container" style="background:#ffffff !important; color:black"> received message format: </span> -->
 </div>
 
 <style>
