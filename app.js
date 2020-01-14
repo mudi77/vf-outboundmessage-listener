@@ -9,8 +9,8 @@ let port = process.env.PORT || 8080;
 
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname + '/public'));
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
+//app.use(bodyParser.urlencoded({ extended: true }));
+//app.use(bodyParser.json());
 
 app.get('/', function(req, res) {    
     console.log("GET request !", req.body);
@@ -30,9 +30,7 @@ app.post('/', xmlparser(), (req, res, next) => {
     res.render('index', { data: JSON.stringify( processMsg ) });
 
     // parseXml.utils.load((loadData) => {
-
     //     console.log("file load: ", loadData);
-
     // });
 
   });
