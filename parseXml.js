@@ -24,7 +24,7 @@ let parse = (data, fn) => {
 
     console.log("parse");
 
-    return parser.parseString(data, function (err, result) {
+    parser.parseString(data, function (err, result) {
 
         console.log("result: ", result);        
 

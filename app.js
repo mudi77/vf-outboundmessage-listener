@@ -12,25 +12,23 @@ app.use(express.static(__dirname + '/public'));
 app.use( bodyParser() );
 
 app.get('/', function(req, res) {    
-    console.log("GET request reseived !!!", req.body);
+    console.log("GET request received !!!", req.body);
     res.render('index');
+
+    // parseXml.parse(req.body, (data) => {
+    //     console.log("data: ", data);
+    // });
+});
+
+app.post("/", function (req, res) {
+    console.log("POST request received !!!", req.body);
+    parser(req.body);
 
     // parseXml.parse(req.body, (data) => {
 
     //     console.log("data: ", data);
 
     // });
-});
-
-app.post("/", function (req, res) {
-    console.log("POST request received !!!", req.body);
-    //parser(req.body);
-
-    parseXml.parse(req.body, (data) => {
-
-        console.log("data: ", data);
-
-    });
 });
 
 app.listen(port, function() {
