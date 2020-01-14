@@ -12,10 +12,6 @@ let port = process.env.PORT || 8080;
 app.set('view engine', 'ejs');
 app.use('/public', express.static( path.join( __dirname + '/public' ) ) );
 
-//app.use(express.static(__dirname + '/public'));
-//app.use(bodyParser.urlencoded({ extended: true }));
-//app.use(bodyParser.json());
-
 let resultData = {"key1":"val1","key2":"val2","key3":"val3"};
 
 app.get('/', function(req, res) {    
@@ -32,13 +28,14 @@ app.post('/', xmlparser(), (req, res, next) => {
     console.log("req.body: ", req.body);
     console.log("processMsg: ", processMsg);
 
-    res.set('Content-Type', 'text/html');
-    //res.render('index', { data: JSON.stringify( resultData, undefined, 4 ) });
+    //res.set('Content-Type', 'text/html');
 
-    app.get('/', function(req, res) {    
-        console.log("GET in POST request !", req.body);
-        res.render('index', { data: JSON.stringify( resultData, undefined, 4 )  });    
-    });
+    res.render('index', { data: JSON.stringify( resultData, undefined, 4 )  });    
+
+    // app.get('/', function(req, res) {    
+    //     console.log("GET in POST request !", req.body);
+    //     res.render('index', { data: JSON.stringify( resultData, undefined, 4 )  });    
+    // });
     
   });
 
