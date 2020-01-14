@@ -5,19 +5,19 @@ let fs = require('fs');
 let xmlPath = __dirname + "/test.xml";
 let xmlFile = {};
 
-fs.readFile(xmlPath, "utf-8", function (error, text) {
-    if (error) {
-        throw error;
-    }else {
-        parser.parseString(text, function (err, result) {
-            var books = result['bookstore']['book'];
+// fs.readFile(xmlPath, "utf-8", function (error, text) {
+//     if (error) {
+//         throw error;
+//     }else {
+//         parser.parseString(text, function (err, result) {
+//             var books = result['bookstore']['book'];
 
-            console.log("result: ", books);
+//             console.log("result: ", books);
             
-            //res.render('index', { books:  books });
-        });
-    }
-});
+//             //res.render('index', { books:  books });
+//         });
+//     }
+// });
 
 
 let parse = (data, fn) => {
@@ -25,15 +25,13 @@ let parse = (data, fn) => {
     console.log("parse");
 
     return parser.parseString(data, function (err, result) {
-        let books = result['bookstore']['book'];
 
-        console.log("result: ", books);        
-        //res.render('index', { books:  books });
+        console.log("result: ", result);        
 
-        fn(books);
+        fn(result);
 
     });
 
 }
 
-module.exports = parse;
+module.exports.parse = parse;

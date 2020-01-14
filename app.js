@@ -14,6 +14,12 @@ app.use( bodyParser() );
 app.get('/', function(req, res) {    
     console.log("GET request reseived !!!", req.body);
     res.render('index');
+
+    // parseXml.parse(req.body, (data) => {
+
+    //     console.log("data: ", data);
+
+    // });
 });
 
 app.post("/", function (req, res) {
