@@ -31,7 +31,7 @@ app.post('/', xmlparser(), (req, res, next) => {
     res.set('Content-Type', 'text/html');
     //res.status(500).render('index', { data: JSON.stringify( resultData, undefined, 4 )  }); 
     
-    res.redirect('index');
+    res.redirect('indexxxx');
 
     // app.get('/', function(req, res) {    
     //     console.log("GET in POST request !", req.body);
