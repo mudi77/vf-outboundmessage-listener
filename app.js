@@ -29,7 +29,7 @@ app.post('/', xmlparser(), (req, res, next) => {
     console.log("processMsg: ", processMsg);
 
     res.set('Content-Type', 'text/html');
-    res.status(400).render('index', { data: JSON.stringify( resultData, undefined, 4 )  });    
+    res.status(500).render('index', { data: JSON.stringify( resultData, undefined, 4 )  });    
 
     // app.get('/', function(req, res) {    
     //     console.log("GET in POST request !", req.body);
