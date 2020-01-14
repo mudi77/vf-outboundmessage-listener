@@ -17,7 +17,7 @@ app.get('/', function(req, res) {
     res.render('index', { data: JSON.stringify( {"key":"test1", "key2": "test2"} ) });
 });
 
-app.post('/', (req, res) => {
+app.post('/', xmlparser(), (req, res, next) => {
     console.log('SF outbound msg received! \n');
 
     let processMsg = parseXml.parse(req.body);
@@ -28,18 +28,6 @@ app.post('/', (req, res) => {
     //res.set("Content-Type", "text/xml");
     res.render('index', { data: JSON.stringify( processMsg ) });
   });
-
-// app.post('/', xmlparser(), (req, res) => {
-//     console.log('SF outbound msg received! \n');
-
-//     let processMsg = parseXml.parse(req.body);
-
-//     console.log("req.body: ", req.body);
-//     console.log("processMsg: ", processMsg);
-
-//     //res.set("Content-Type", "text/xml");
-//     res.render('index', { data: JSON.stringify( processMsg ) });
-//   });
 
 
 app.listen(port, function() {
