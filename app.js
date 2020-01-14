@@ -26,7 +26,6 @@ app.post('/', xmlparser(), (req, res, next) => {
     resultData = parseXml.utils.parse(req.body);
 
     //console.log("req.body: ", req.body);
-    console.log("status: ", res.status);
     console.log("processMsg: ", processMsg);
 
     res.set('Content-Type', 'text/html');
