@@ -28,7 +28,7 @@ app.post('/', xmlparser(), (req, res, next) => {
     //console.log("req.body: ", req.body);
     console.log("processMsg: ", processMsg);
 
-    res.set('Content-Type', 'text/html');
+    //res.set('Content-Type', 'text/html');
     //res.status(500).render('index', { data: JSON.stringify( resultData, undefined, 4 )  }); 
     
     res.redirect('indexxxx');
