@@ -25,18 +25,19 @@ app.post('/', xmlparser(), (req, res, next) => {
     let processMsg = parseXml.utils.parse(req.body);
     resultData = parseXml.utils.parse(req.body);
 
-    console.log("req.body: ", req.body);
+    //console.log("req.body: ", req.body);
+    console.log("status: ", res.status);
     console.log("processMsg: ", processMsg);
 
     res.set('Content-Type', 'text/html');
-    res.render('index', { data: JSON.stringify( resultData, undefined, 4 )  });    
+    res.status(200).render('index', { data: JSON.stringify( resultData, undefined, 4 )  });    
 
     // app.get('/', function(req, res) {    
     //     console.log("GET in POST request !", req.body);
     //     res.render('index', { data: JSON.stringify( resultData, undefined, 4 )  });    
     // });
     
-  }).render('index', { data: JSON.stringify( resultData, undefined, 4 )  });
+  });
 
 app.listen(port, function() {
     console.log('app is running on http://localhost:' + port);
