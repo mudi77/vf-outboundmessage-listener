@@ -55,4 +55,4 @@ unwrapMessage = function(obj) {
   };
   
 
-module.exports.parse = unwrapMessage;
+module.exports.unwrapMessage = unwrapMessage;
