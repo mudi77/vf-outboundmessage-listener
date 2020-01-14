@@ -54,7 +54,7 @@ app.get('/', function(req, res) {
 
     //res.set("Content-Type", "text/xml");
     res.set('Content-Type', 'text/html');
-    res.render('index', { data: JSON.stringify( {"key":"test16565", "key2": "test275757"} ) });
+    res.render('index', { 'data': JSON.stringify( {"key":"test16565", "key2": "test275757"} ) });
 
     //res.redirect('index', { data: JSON.stringify( {"key":"test16565", "key2": "test275757"} ) });
     
