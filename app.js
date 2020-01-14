@@ -26,7 +26,8 @@ app.post('/', xmlparser(), (req, res, next) => {
     console.log("processMsg: ", processMsg);
 
     //res.set("Content-Type", "text/xml");
-    res.send('index', { data: JSON.stringify( processMsg ) });
+    res.set('Content-Type', 'text/html');
+    res.render('index', { data: JSON.stringify( processMsg ) });
 
     // parseXml.utils.load((loadData) => {
 
