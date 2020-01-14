@@ -14,7 +14,7 @@ let utils = {
                 //parser.parseString(text, function (err, result) {
                 //var books = result['bookstore']['book'];
     
-                console.log("result: ", data);
+                //console.log("result: ", data);
                     
                 fn(data);
     

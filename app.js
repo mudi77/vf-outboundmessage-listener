@@ -26,13 +26,13 @@ app.post('/', xmlparser(), (req, res, next) => {
     console.log("processMsg: ", processMsg);
 
     //res.set("Content-Type", "text/xml");
-    res.render('index', { data: JSON.stringify( processMsg ) });
+    res.send('index', { data: JSON.stringify( processMsg ) });
 
-    parseXml.utils.load((loadData) => {
+    // parseXml.utils.load((loadData) => {
 
-        console.log("file load: ", loadData);
+    //     console.log("file load: ", loadData);
 
-    });
+    // });
 
   });
 
