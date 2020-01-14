@@ -11,15 +11,7 @@ let utils = {
             if (error) {
                 throw error;
             }else {
-                //parser.parseString(text, function (err, result) {
-                //var books = result['bookstore']['book'];
-    
-                //console.log("result: ", data);
-                    
                 fn(data);
-    
-                //res.render('index', { books:  books });
-                //});
             }
         });
     },
