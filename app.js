@@ -20,6 +20,11 @@ app.get('/', function(req, res) {
 });
 
 
+app.get('/sf-trgr', function(req, res) {    
+    console.log("GET request sf-trgr received! - body: ", req.body);
+    res.render('index', { data: JSON.stringify( resultData, undefined, 4 )  });    
+});
+
 
 
 app.post('/', xmlparser(), (req, res, next) => {
