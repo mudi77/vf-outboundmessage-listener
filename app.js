@@ -12,6 +12,8 @@ let port = process.env.PORT || 8080;
 app.set('view engine', 'ejs');
 app.use('/public', express.static( path.join( __dirname + '/public' ) ) );
 
+app.use(bodyParser);
+
 let resultData = {"key1":"val1","key2":"val2","key3":"val3"};
 
 app.get('/', function(req, res) {    
