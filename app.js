@@ -21,14 +21,12 @@ app.get('/', function(req, res) {
     res.render('index', { data: JSON.stringify( resultData, undefined, 4 )  });    
 });
 
-
 app.post('/sf-trgr', function(req, res) {    
     console.log("DATA received! - Account " + (req.body.isInsert == 'yes' ? 'Inserted' : 'Updated') + " ID: " + req.body.Id);
 
 
     res.render('index', { data: JSON.stringify( resultData, undefined, 4 )  });    
 });
-
 
 app.post('/', xmlparser(), (req, res, next) => {
     console.log('SF outbound msg received! \n');
