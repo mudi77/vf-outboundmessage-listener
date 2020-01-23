@@ -1,23 +1,45 @@
 .sideSection{
     position: absolute;
     overflow: hidden;
-    left: 2%;
+    left: 0%;
     top: 30%;
-    width: 35%;
+    width: 45%;
     height: 30%;
     padding: 0;
-    margin: 0;
+    margin: 1em;
     background-color: grey;
 }
 
 .resultSection{
     position: absolute;
     overflow: hidden;
-    left: 40%;
+    right: 0%;
     top: 30%;
-    width: 35%;
+    width: 50%;
     height: 60%;
     padding: 0;
-    margin: 0;
+    margin: 1em;
     background-color: #4e5d6c;
+}
+
+#resultDataContainer{
+    position: absolute;
+    overflow-y: scroll;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    color: ghostwhite;
+}
+
+.resultLabel{
+    font-weight: bolder;
+}
+
+.container{
+    position: absolute;
+    border-right: solid 4px grey;
+    border-left: solid 4px grey;
+    height: 100%;
+    width: 80%;
+    left: 10%;
 }

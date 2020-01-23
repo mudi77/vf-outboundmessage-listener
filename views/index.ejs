@@ -12,6 +12,9 @@
         //location.reload(true/false);
     </script>
 
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+
 </head>
 <body>
 
@@ -19,12 +22,15 @@
     <div class="jumbotron">
         <h2>Test: SF outbound message format</h2>        
         <p>Endpoint URL defined in SF:	https://vf-outbound-listener.herokuapp.com/</p>
-    </div>
 
     
     <%- include ('./partial/sideSection') -%>
     
     <%- include ('./partial/resultSection', {data: data}) -%>
+
+    </div>
+
+
   
 </div>
 
@@ -33,5 +39,6 @@
 
 </style>
 
+<script type="text/javascript" src="/public/js/logic.js"></script>
 </body>
 </html>
