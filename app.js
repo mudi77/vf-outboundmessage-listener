@@ -23,7 +23,9 @@ app.get('/', function(req, res) {
 
 
 app.post('/sf-trgr', function(req, res) {    
-    console.log("DATA received! - Account changed: ", req.body);
+    console.log("DATA received! - Account " + (req.body.isInsert == 'yes' ? 'Inserted' : 'Updated') + " ID: " + req.body.Id);
+
+
     res.render('index', { data: JSON.stringify( resultData, undefined, 4 )  });    
 });
 
