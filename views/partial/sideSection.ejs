@@ -2,7 +2,7 @@
     <label class="resultLabel">POST ENDPOINT DEFINITION:</label>
 
     <pre >     
-    app.post('/', xmlparser(), (req, res, next) => {
+    app.post('/sf-trgr', xmlparser(), (req, res, next) => {
         let processMsg = parseXml.utils.parse(req.body);
         res.set('Content-Type', 'text/html');
         res.render('index', { data: JSON.stringify( processMsg ) });
