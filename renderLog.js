@@ -15,6 +15,8 @@ let update = {
     },
 
     processData: (newData, oldData) => {
+        if(newData === "del") return "";
+
         var newDataObject = JSON.parse( JSON.stringify( newData) );
         var merge = [];
 
@@ -39,7 +41,7 @@ let update = {
             fs.writeFile("data.json", processedData, (err) => {
                 if (err) console.log("ERROR: ", err);
 
-                console.log("Successfully Written to File.");
+                //console.log("Successfully Written to File.");
 
             });
         });

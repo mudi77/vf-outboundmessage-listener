@@ -43,3 +43,9 @@
     width: 80%;
     left: 10%;
 }
+
+#del{
+    position: absolute;
+    border-radius: 0.5em;
+    right: 0.5em;
+}

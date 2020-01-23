@@ -1,12 +1,8 @@
 let express = require('express');
 let app = express();
 let bodyParser = require('body-parser');
-//let parseXml = require('./parseXml');
-//let xmlparser = require('express-xml-bodyparser');
 let path = require('path');
-
 let renderLog = require('./renderLog');
-
 let port = process.env.PORT || 8080;
 
 app.set('view engine', 'ejs');
@@ -27,7 +23,7 @@ app.get('/', async function(req, res) {
 
 //SAVE DATA
 app.post('/sf-trgr', function(req, res) {    
-    console.log("DATA received! - Account " + (req.body.isInsert == 'yes' ? 'Inserted' : 'Updated') + " ID: " + req.body.Id);
+    //console.log("DATA received! - Account " + (req.body.isInsert == 'yes' ? 'Inserted' : 'Updated') + " ID: " + req.body.Id);
 
     renderLog.update.setNew( req.body );
     res.render('index', { data: JSON.stringify( resultData, undefined, 4 )  });    
@@ -38,12 +34,15 @@ app.post('/sf-trgr', function(req, res) {
 app.get('/render', async (req, res) => {
     let updatedData = await renderLog.update.getNew();
 
-    console.log('updatedData: ', updatedData );
+    //console.log('updatedData: ', updatedData );
     res.send( updatedData );
 });
 
 
-
+app.post('/del', function(req, res) {    
+    renderLog.update.setNew( "del" );
+    res.send( "" ); 
+});
 
 
 
