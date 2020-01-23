@@ -22,17 +22,10 @@ app.get('/', function(req, res) {
 });
 
 
-// app.get('/sf-trgr', function(req, res) {    
-//     console.log("GET request sf-trgr received! - body: ", req.body);
-//     res.render('index', { data: JSON.stringify( resultData, undefined, 4 )  });    
-// });
-
-
 app.post('/sf-trgr', function(req, res) {    
-    console.log("POST request sf-trgr received! - body: ", req.body);
+    console.log("DATA received! - Account changed: ", req.body);
     res.render('index', { data: JSON.stringify( resultData, undefined, 4 )  });    
 });
-
 
 
 app.post('/', xmlparser(), (req, res, next) => {
@@ -40,18 +33,7 @@ app.post('/', xmlparser(), (req, res, next) => {
 
     let processMsg = {};    
 
-    //console.log("req.body: ", req.body);
-    //console.log("processMsg: ", processMsg);
-    //res.set('Content-Type', 'text/html');
-    //res.status(500).render('index', { data: JSON.stringify( resultData, undefined, 4 )  });     
-    //res.redirect('indexxxx');
-    // app.get('/', function(req, res) {    
-    //     console.log("GET in POST request !", req.body);
-    //     res.render('index', { data: JSON.stringify( resultData, undefined, 4 )  });    
-    // });
-
     try{
-
         resultData = parseXml.utils.parse(req.body);
         processMsg = parseXml.utils.parse(req.body);
 
